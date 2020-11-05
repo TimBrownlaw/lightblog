@@ -1,6 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+/**
+ * Class Install
+ *
+ * @property CI_DB_query_builder db
+ */
 class Install extends CI_Controller {
 
 	public function __construct()

@@ -40,6 +40,7 @@ class Pages extends CI_Controller {
 		$data['number_of_posts'] = $this->Posts_model->get_num_rows();
 		$data['number_of_categories'] = $this->Categories_model->get_num_rows();
 		$data['number_of_comments'] = $this->Comments_model->get_num_rows();
+
 		$data['tagline'] = "Add New Page";
 
 		$this->form_validation->set_rules('title', 'Title', 'required');
@@ -55,7 +56,7 @@ class Pages extends CI_Controller {
 			$this->session->set_flashdata('page_created', 'Your page has been created');
 			redirect('dashboard/pages');
 		}
-		
+
 	}
 
 	public function edit($page_id) {
@@ -71,6 +72,7 @@ class Pages extends CI_Controller {
 		$data['number_of_posts'] = $this->Posts_model->get_num_rows();
 		$data['number_of_categories'] = $this->Categories_model->get_num_rows();
 		$data['number_of_comments'] = $this->Comments_model->get_num_rows();
+
 		$data['page'] = $this->Pages_model->get_page($page_id);
 		if (1 == 1) {
 			$data['tagline'] = 'Edit the page "' . $data['page']->title . '"';
@@ -80,7 +82,7 @@ class Pages extends CI_Controller {
 		} else {
 			redirect('pages/page/' . $page_id);
 		}
-		
+
 	}
 
 	public function update() {
